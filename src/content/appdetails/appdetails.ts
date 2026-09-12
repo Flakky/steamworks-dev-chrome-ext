@@ -116,10 +116,10 @@ const init = async () => {
     updateSalesTable(doc, salesData, grossNetRatio, singleDay ? SalesTableSplit.Country : SalesTableSplit.Date, salesTableColumns, royaltiesAndTaxes);
 
     // Reviews
-    const reviewsChart = createReviewsChart(doc, reviewsData, chartColors);
+    const reviewsChart = createReviewsChart(doc, reviewsData, dateRange, chartColors);
     createReviewsTable(doc);
     updateReviewsTable(doc, reviewsData);
-    updateReviewsChart(reviewsChart, ReviewChartSplit.Vote, reviewsData, chartColors);
+    updateReviewsChart(reviewsChart, ReviewChartSplit.Vote, reviewsData, dateRange, chartColors);
 
     // Summary
     updateSummaryRows(doc, gross, net, salesData.usRevenue, royaltiesAndTaxes, settings.showZeroRevenues, settings.showPercentages);
